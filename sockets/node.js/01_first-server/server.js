@@ -19,11 +19,12 @@ function handleClient(sock) {
         sock.write('exit');
     });
 
-    sock.on('close', () => {
-        console.log(`Connection from ${client}`);
+    sock.on('end', () => {
+        console.log(`Disconnected from ${client}`);
     });
 
     sock.on('error', (err) => {
-        console.log(`Connection error from ${client}`);
+        // TODO: Implement a meaningful error handling here
+        throw err;
     });
 }
