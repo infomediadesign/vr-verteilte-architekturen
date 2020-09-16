@@ -11,10 +11,10 @@ app.use(express.static('public'))
 
 app.get('/api/scores', (req, res) => {
     res.sendFile(__dirname + '/data/data.json')
-})
+});
 
 app.post('/api/score', (req, res) => {
-    console.log(req)
+    console.log(req);
     res.sendStatus(201)
 
     db.get('scores')
